@@ -26,7 +26,7 @@ body {
 
 #dashboard {
   position: fixed;
-  top: 50px;
+  top: 0;
   width: 100%;
   max-width: 480px;
   background-color: white;
