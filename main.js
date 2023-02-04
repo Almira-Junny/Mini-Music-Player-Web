@@ -75,6 +75,7 @@ var isPlaying = false;
 var isRandom = false;
 var isRepeat = false;
 var isOptionActive = false;
+var optionActiveID = -1;
 
 function start() {
   renderSong();
@@ -100,7 +101,7 @@ function renderSong() {
             <div class="author">${currentSong.singer}</div>
           </div>
 
-          <div class="option">
+          <div class="option" id=${index}>
             <i class="fas fa-ellipsis-h"></i>
             <ul class="option-container">
             <li class="delete">Delete</li> 
@@ -330,22 +331,25 @@ function handleEvents() {
         optionBtns.forEach((optionBtn) => {
           optionBtn.classList.remove("active");
         });
+        isOptionActive = false;
       }
-      isOptionActive = !isOptionActive;
+      if (optionActiveID === index) return;
+      isOptionActive = true;
       optionBtn.classList.toggle("active", isOptionActive);
-      console.log(isOptionActive);
+      optionActiveID = index
     };
   });
   document.onclick = (e) => {
-    if (!e.target.closest(".option")) {
+    if (e.target.closest(".option")) return;
+    if (isOptionActive) {
       optionBtns.forEach((optionBtn) => {
         optionBtn.classList.remove("active");
       });
       isOptionActive = false;
-    }
-  };
+  }};
   options.forEach((option, index) => {
     option.onclick = () => {
+      console.log('delete button clicked ')
       songs = songs.filter((song) => {
         return song != songs[index];
       });
