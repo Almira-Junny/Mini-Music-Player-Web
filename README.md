@@ -1,2 +1,2 @@
-Mini Music Player with pure HTML, CSS, JS
+Mini Music Player with pure HTML, CSS, JS </br>
 Created for fun
