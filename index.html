@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="dashboard">
+        <div id="header">
+          <h4>Now Playing:</h4>
+          <h2>Hitori, Futari</h2>
+        </div>
+
+        <div id="song-image">
+          <div></div>
+        </div>
+
+        <div id="control">
+          <div class="btn btn-repeat">
+            <i class="fas fa-redo"></i>
+          </div>
+
+          <div class="btn btn-backward">
+            <i class="fas fa-step-backward"></i>
+          </div>
+
+          <div class="btn btn-play">
+            <i class="fas fa-pause icon-pause"></i>
+            <i class="fas fa-play icon-play"></i>
+          </div>
+
+          <div class="btn btn-forward">
+            <i class="fas fa-step-forward"></i>
+          </div>
+
+          <div class="btn btn-shuffle">
+            <i class="fas fa-random"></i>
+          </div>
+        </div>
+
+        <div id="progress-container">
+          <input
+            id="progress"
+            class="progress"
+            type="range"
+            value="0"
+            step="1"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <audio id="audio" src=""></audio>
+      </div>
+
+      <div id="song-container"></div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+:root {
+  --primary-color: #ec1f55;
+  --text-color: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: var(--text-color);
+}
+
+#main {
+  position: relative;
+  max-width: 480px;
+  margin: 50px auto;
+}
+
+#dashboard {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  max-width: 480px;
+  background-color: white;
+  z-index: 10;
+}
+
+#header {
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+#header h4 {
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+#song-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#song-image div {
+  background-image: url("https://i.scdn.co/image/ab67616d00001e025b4c661f33a2b02b271f6a64");
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: contain;
+}
+
+#control {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0 10px;
+}
+
+.btn {
+  padding: 18px;
+  color: #666;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(85%);
+}
+
+.btn-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 24px;
+}
+
+.btn-play .icon-pause {
+  display: none;
+}
+
+#control.playing .icon-pause {
+  display: block;
+}
+
+#control.playing .icon-play {
+  display: none;
+}
+
+.btn-shuffle.active {
+  color: var(--primary-color);
+}
+
+.btn-repeat.active {
+  color: var(--primary-color);
+}
+
+#progress-container {
+  width: 90%;
+  margin: 0 auto 10px;
+  cursor: pointer;
+}
+
+#progress {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 12px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+#song-container {
+  margin-top: 460px;
+  padding: 12px;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-top: 10px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* .song:active {
+  opacity: 0.8;
+} */
+
+.song.active {
+  background-color: var(--primary-color);
+}
+
+.song .thumbnail img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.song .description {
+  flex: 1;
+}
+
+.song .description .title {
+  font-size: 18px;
+  display: inline-block;
+}
+
+.song.active .description .title {
+  color: white;
+}
+
+.song:hover .description .title {
+  color: var(--primary-color);
+}
+
+.song.active:hover .description .title {
+  color: white;
+}
+
+.song .description .author {
+  font-size: 12px;
+  color: #999999;
+}
+
+.song.active .description .author {
+  color: white;
+}
+
+.song .option {
+  position: relative;
+  cursor: pointer;
+  color: #999;
+  font-size: 18px;
+}
+
+.song .option i {
+  padding: 8px 12px;
+}
+
+.song.active .option {
+  color: white;
+}
+
+.song .option i:hover {
+  filter: brightness(85%);
+}
+
+.song .option-container {
+  display: none;
+  position: absolute;
+  left: 90%;
+  top: 20px;
+  z-index: 100;
+  list-style-type: none;
+}
+
+.song .option.active .option-container {
+  display: block;
+}
+
+.song .option-container li {
+  color: white;
+  background-color: var(--primary-color);
+  padding: 10px;
+  letter-spacing: 0.1rem;
+  border: 1px solid var(--text-color);
+}
+
+.song .option-container li:hover {
+  filter: brightness(85%);
+}
