@@ -9,6 +9,7 @@
  * Active song
  * Scroll Active song into view
  * PLay song when clicked
+ * Delete function
  */
 
 const $ = document.querySelector.bind(document);
@@ -336,7 +337,7 @@ function handleEvents() {
       }
       isOptionActive = true;
       optionBtn.classList.toggle("active", isOptionActive);
-      optionActiveID = index
+      optionActiveID = index;
     };
   });
   document.onclick = (e) => {
@@ -346,11 +347,11 @@ function handleEvents() {
         optionBtn.classList.remove("active");
       });
       isOptionActive = false;
-      optionActiveID = -1
-  }};
+      optionActiveID = -1;
+    }
+  };
   options.forEach((option, index) => {
     option.onclick = () => {
-      console.log('delete button clicked ')
       songs = songs.filter((song) => {
         return song != songs[index];
       });
