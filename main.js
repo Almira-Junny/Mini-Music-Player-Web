@@ -332,8 +332,8 @@ function handleEvents() {
           optionBtn.classList.remove("active");
         });
         isOptionActive = false;
+        if (optionActiveID === index) return;
       }
-      if (optionActiveID === index) return;
       isOptionActive = true;
       optionBtn.classList.toggle("active", isOptionActive);
       optionActiveID = index
@@ -346,6 +346,7 @@ function handleEvents() {
         optionBtn.classList.remove("active");
       });
       isOptionActive = false;
+      optionActiveID = -1
   }};
   options.forEach((option, index) => {
     option.onclick = () => {
